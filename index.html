@@ -798,8 +798,6 @@
   #home-stats > div:first-child > div:first-child { color: #e05555 !important; }
   /* Packing card — gold accent */
   #home-stats > div:nth-child(2) > div:first-child { color: var(--gold); }
-  /* Budget card — green accent */
-  #home-stats > div:nth-child(3) > div:first-child { color: #4ade80; }
   @keyframes statPulse {
     0%   { transform: scale(1); }
     40%  { transform: scale(1.08); }
@@ -1634,10 +1632,7 @@
       <div style="font-weight:700;font-family:'Playfair Display',serif" id="stat-pack-pct">–%</div>
       <div style="font-size:0.68rem;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:1px">ציוד מוכן</div>
     </div>
-    <div class="home-stat-card" onclick="switchPage('money')" style="-webkit-tap-highlight-color:transparent">
-      <div style="font-weight:700;font-family:'Playfair Display',serif" id="stat-budget">₪–</div>
-      <div style="font-size:0.68rem;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:1px">תקציב</div>
-    </div>
+
   </div>
 
   <section id="flights">
@@ -1772,173 +1767,173 @@
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">1</div>
         <div class="day-info">
-          <div class="day-title">✈️ יום הגעה — לכבוש את הרחובות</div>
-          <div class="day-date">יום ג', 2 ביוני · נחיתה 11:00</div>
+          <div class="day-title">✈️ יום הגעה</div>
+          <div class="day-date">יום ג', 2 ביוני · נחיתה ~11:30</div>
         </div>
         <div class="day-toggle">▾</div>
       </div>
       <div class="day-body">
         <ul class="activity-list">
-          <li class="activity-item"><span class="activity-time">11:00</span><div class="activity-dot"></div><span class="activity-text">נחיתה בנמל התעופה בודפשט (BUD)</span></li>
-          <li class="activity-item"><span class="activity-time">12:30</span><div class="activity-dot"></div><span class="activity-text">הגעה למלון Silver Crown, צ'ק-אין משעה 15:00</span></li>
-          <li class="activity-item"><span class="activity-time">14:00</span><div class="activity-dot"></div><span class="activity-text">צהריים ראשונים — מסעדה בשכונה Palace Quarter</span></li>
-          <li class="activity-item"><span class="activity-time">16:00</span><div class="activity-dot"></div><span class="activity-text">הכנסות חפצים ומנוחה קצרה במלון</span></li>
-          <li class="activity-item"><span class="activity-time">18:00</span><div class="activity-dot"></div><span class="activity-text">טיול ערב ברחוב Váci — קניות וסידורים ראשונים</span></li>
-          <li class="activity-item"><span class="activity-time">20:00</span><div class="activity-dot"></div><span class="activity-text">ארוחת ערב ראשונה — גולאש הונגרי אמיתי 🍲</span></li>
+          <li class="activity-item"><span class="activity-time">11:30</span><div class="activity-dot"></div><span class="activity-text">נחיתה בנמל התעופה בודפשט</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">הגעה למלון והתארגנות</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">ארוחת צהריים</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">הסתובבות והכרת העיר — סופר, מוזיאון הלאומי והשוק הגדול</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">חזרה למלון</span></li>
+          <li class="activity-item"><span class="activity-time">20:45</span><div class="activity-dot"></div><span class="activity-text">שיוט בדנובה 🚢</span></li>
         </ul>
       </div>
     </div>
+
+    
 
     <!-- Day 2 -->
     <div class="day-card fade-in" data-date="2026-06-03">
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">2</div>
         <div class="day-info">
-          <div class="day-title">🏛️ פרלמנט וצד פשט</div>
+          <div class="day-title">🌶️ סיור פפריקה ואוטובוס אמפיבי</div>
           <div class="day-date">יום ד', 3 ביוני</div>
         </div>
         <div class="day-toggle">▾</div>
       </div>
       <div class="day-body">
         <ul class="activity-list">
-          <li class="activity-item"><span class="activity-time">09:00</span><div class="activity-dot"></div><span class="activity-text">ארוחת בוקר במלון</span></li>
-          <li class="activity-item"><span class="activity-time">10:00</span><div class="activity-dot"></div><span class="activity-text">סיור מודרך בבניין הפרלמנט (מומלץ לזמן מראש!)</span></li>
-          <li class="activity-item"><span class="activity-time">12:30</span><div class="activity-dot"></div><span class="activity-text">כיכר החרויות ומנורת הזיכרון</span></li>
-          <li class="activity-item"><span class="activity-time">14:00</span><div class="activity-dot"></div><span class="activity-text">צהריים ברובע היהודי</span></li>
-          <li class="activity-item"><span class="activity-time">15:30</span><div class="activity-dot"></div><span class="activity-text">ביקור בבית הכנסת הגדול — Dohány Street Synagogue</span></li>
-          <li class="activity-item"><span class="activity-time">18:00</span><div class="activity-dot"></div><span class="activity-text">שוק Karavan Street Food</span></li>
+          <li class="activity-item"><span class="activity-time">10:00</span><div class="activity-dot"></div><span class="activity-text">פפריקה — סיור הכרת העיר (עד 13:00)</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">חזרה למלון וארוחת צהריים</span></li>
+          <li class="activity-item"><span class="activity-time">16:00</span><div class="activity-dot"></div><span class="activity-text">סיור באוטובוס אמפיבי 🚌💦</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">חזרה למלון</span></li>
         </ul>
       </div>
     </div>
+
+    
 
     <!-- Day 3 -->
     <div class="day-card fade-in" data-date="2026-06-04">
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">3</div>
         <div class="day-info">
-          <div class="day-title">🏰 מצודת בודה ואגן דיג הדגים</div>
+          <div class="day-title">🚢 סיור ברך הדנובה</div>
           <div class="day-date">יום ה', 4 ביוני</div>
         </div>
         <div class="day-toggle">▾</div>
       </div>
       <div class="day-body">
         <ul class="activity-list">
-          <li class="activity-item"><span class="activity-time">09:00</span><div class="activity-dot"></div><span class="activity-text">ארוחת בוקר ועלייה לגבעת בודה (קבל עגלית / אוטובוס)</span></li>
-          <li class="activity-item"><span class="activity-time">10:00</span><div class="activity-dot"></div><span class="activity-text">מצודת בודה ואגן הדיג של הדגים — תצפית מדהימה!</span></li>
-          <li class="activity-item"><span class="activity-time">12:00</span><div class="activity-dot"></div><span class="activity-text">כנסיית מתיאש</span></li>
-          <li class="activity-item"><span class="activity-time">13:30</span><div class="activity-dot"></div><span class="activity-text">צהריים עם נוף לדנובה</span></li>
-          <li class="activity-item"><span class="activity-time">15:00</span><div class="activity-dot"></div><span class="activity-text">גשר השלשלאות — חצייה ברגל לפשט</span></li>
-          <li class="activity-item"><span class="activity-time">17:00</span><div class="activity-dot"></div><span class="activity-text">קפה בשוק הגדול Central Market Hall</span></li>
+          <li class="activity-item"><span class="activity-time">08:45</span><div class="activity-dot"></div><span class="activity-text">סיור ברך הדנובה</span></li>
         </ul>
       </div>
     </div>
 
-    <!-- Day 4 -->
     <div class="day-card fade-in" data-date="2026-06-05">
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">4</div>
         <div class="day-info">
-          <div class="day-title">♨️ יום פנאי — מרחצאות וגן עדן</div>
+          <div class="day-title">🛍️ שוק, גלגל ענק ורובע יהודי</div>
           <div class="day-date">יום ו', 5 ביוני</div>
         </div>
         <div class="day-toggle">▾</div>
       </div>
       <div class="day-body">
         <ul class="activity-list">
-          <li class="activity-item"><span class="activity-time">10:00</span><div class="activity-dot"></div><span class="activity-text">מרחצאות Széchenyi — ניסיון ספא הונגרי אמיתי</span></li>
-          <li class="activity-item"><span class="activity-time">13:00</span><div class="activity-dot"></div><span class="activity-text">פיקניק בפארק העיר Városliget</span></li>
-          <li class="activity-item"><span class="activity-time">15:00</span><div class="activity-dot"></div><span class="activity-text">מוזיאון יפות האמנויות (לאוהבי אמנות)</span></li>
-          <li class="activity-item"><span class="activity-time">17:30</span><div class="activity-dot"></div><span class="activity-text">טיול לאורך שדרת Andrássy</span></li>
-          <li class="activity-item"><span class="activity-time">20:00</span><div class="activity-dot"></div><span class="activity-text">ערב חופשי — מסעדה לבחירת המשפחה</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">שוק הפשפשים</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">מוזיאון האשליות</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">מדאם טוסו</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">גלגל ענק 🎡</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">טיול ברובע היהודי ובית הכנסת הגדול</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">רחוב ואצ'י וכיכר ורשמאטי</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">קניות אוכל לשבת 🛒</span></li>
+          <li class="activity-item"><span class="activity-time">20:18</span><div class="activity-dot"></div><span class="activity-text">כניסת שבת 🕯️</span></li>
         </ul>
       </div>
     </div>
+
+    
 
     <!-- Day 5 -->
     <div class="day-card fade-in" data-date="2026-06-06">
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">5</div>
         <div class="day-info">
-          <div class="day-title">🚢 שייט בדנובה ויום קניות</div>
+          <div class="day-title">✡️ שבת</div>
           <div class="day-date">יום ש', 6 ביוני</div>
         </div>
         <div class="day-toggle">▾</div>
       </div>
       <div class="day-body">
         <ul class="activity-list">
-          <li class="activity-item"><span class="activity-time">10:00</span><div class="activity-dot"></div><span class="activity-text">שייט בנהר הדנובה — מומלץ שייט בוקר</span></li>
-          <li class="activity-item"><span class="activity-time">12:30</span><div class="activity-dot"></div><span class="activity-text">צהריים ברובע ה-5</span></li>
-          <li class="activity-item"><span class="activity-time">14:30</span><div class="activity-dot"></div><span class="activity-text">קניות ברחוב Váci ו-WestEnd City Center</span></li>
-          <li class="activity-item"><span class="activity-time">19:00</span><div class="activity-dot"></div><span class="activity-text">ארוחת ערב חגיגית במסעדה מומלצת</span></li>
+          <li class="activity-item"><span class="activity-time">21:38</span><div class="activity-dot"></div><span class="activity-text">יציאת שבת ✨</span></li>
         </ul>
       </div>
     </div>
+
+    
 
     <!-- Day 6 -->
     <div class="day-card fade-in" data-date="2026-06-07">
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">6</div>
         <div class="day-info">
-          <div class="day-title">🏙️ שכונות קסומות וגלריות</div>
+          <div class="day-title">🦁 גן חיות, טירה וכיכר הגיבורים</div>
           <div class="day-date">יום א', 7 ביוני</div>
         </div>
         <div class="day-toggle">▾</div>
       </div>
       <div class="day-body">
         <ul class="activity-list">
-          <li class="activity-item"><span class="activity-time">10:00</span><div class="activity-dot"></div><span class="activity-text">סיור בשכונת Belváros — ארכיטקטורה עוצרת נשימה</span></li>
-          <li class="activity-item"><span class="activity-time">12:00</span><div class="activity-dot"></div><span class="activity-text">שוק אנטיקים Hold Street Market</span></li>
-          <li class="activity-item"><span class="activity-time">14:00</span><div class="activity-dot"></div><span class="activity-text">מוזיאון ההיסטוריה ההונגרית</span></li>
-          <li class="activity-item"><span class="activity-time">16:30</span><div class="activity-dot"></div><span class="activity-text">קפה ועוגת Dobos המפורסמת ☕</span></li>
-          <li class="activity-item"><span class="activity-time">20:00</span><div class="activity-dot"></div><span class="activity-text">הופעה מוזיקלית / אופרה (בהתאם לזמינות)</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">גן חיות וטירת ויידהוניאד 🦒</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">כיכר הגיבורים 🏛️</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">קניון ארנה 🛍️</span></li>
         </ul>
       </div>
     </div>
+
+    
 
     <!-- Day 7 -->
     <div class="day-card fade-in" data-date="2026-06-08">
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">7</div>
         <div class="day-info">
-          <div class="day-title">🌅 יום אחרון — פרידה מבודפשט</div>
+          <div class="day-title">🏰 גבעת הטירה, אי מרגרט ופרידה</div>
           <div class="day-date">יום ב', 8 ביוני</div>
         </div>
         <div class="day-toggle">▾</div>
       </div>
       <div class="day-body">
         <ul class="activity-list">
-          <li class="activity-item"><span class="activity-time">09:00</span><div class="activity-dot"></div><span class="activity-text">ארוחת בוקר אחרונה מפנקת במלון</span></li>
-          <li class="activity-item"><span class="activity-time">10:30</span><div class="activity-dot"></div><span class="activity-text">ביקור באטרקציה שפספסנו / קניות אחרונות</span></li>
-          <li class="activity-item"><span class="activity-time">13:00</span><div class="activity-dot"></div><span class="activity-text">צהריים פרידה — מסעדה מועדפת</span></li>
-          <li class="activity-item"><span class="activity-time">15:00</span><div class="activity-dot"></div><span class="activity-text">מנוחה במלון לפני ערב</span></li>
-          <li class="activity-item"><span class="activity-time">19:00</span><div class="activity-dot"></div><span class="activity-text">ארוחת ערב פרידה + חבילות לטיסה</span></li>
-          <li class="activity-item"><span class="activity-time">21:00</span><div class="activity-dot"></div><span class="activity-text">יציאה לנמל התעופה לטיסה 23:15</span></li>
+          <li class="activity-item"><span class="activity-time">09:00</span><div class="activity-dot"></div><span class="activity-text">יציאה מהמלון — גשר השלשלאות (Chain Bridge), טיול לגבעת הטירה</span></li>
+          <li class="activity-item"><span class="activity-time">10:00</span><div class="activity-dot"></div><span class="activity-text">עליה לגבעת הטירה (Castle District) — ארמון בודה</span></li>
+          <li class="activity-item"><span class="activity-time">11:45</span><div class="activity-dot"></div><span class="activity-text">החלפת המשמרות בארמון הנשיאות (Sándor Palace)</span></li>
+          <li class="activity-item"><span class="activity-time">12:00</span><div class="activity-dot"></div><span class="activity-text">מצודת הדייגים (Fisherman's Bastion) — תמונות ופנורמה</span></li>
+          <li class="activity-item"><span class="activity-time">12:30</span><div class="activity-dot"></div><span class="activity-text">כנסיית מתיאש</span></li>
+          <li class="activity-item"><span class="activity-time">13:30</span><div class="activity-dot"></div><span class="activity-text">צהריים בגבעה — קפה היסטורי Ruszwurm</span></li>
+          <li class="activity-item"><span class="activity-time">15:00</span><div class="activity-dot"></div><span class="activity-text">אי מרגרט (Margitsziget) — אוטובוס 19 או 41 מ-Batthyány tér</span></li>
+          <li class="activity-item"><span class="activity-time">16:00</span><div class="activity-dot"></div><span class="activity-text">ביליוי וריגוע באי — מזרקה מוזיקלית, גן גדול</span></li>
+          <li class="activity-item"><span class="activity-time">18:30</span><div class="activity-dot"></div><span class="activity-text">חזרה למלון Silver Crown — דרך גשר מרגרט</span></li>
         </ul>
       </div>
     </div>
+
+    
 
     <!-- Day 8 = departure -->
     <div class="day-card fade-in" data-date="2026-06-09">
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">8</div>
         <div class="day-info">
-          <div class="day-title">🏠 חזרה הביתה</div>
-          <div class="day-date">יום ג', 9 ביוני · טיסה 23:15 → נחיתה 10/6 03:20</div>
+          <div class="day-title">🏠 יום עזיבה</div>
+          <div class="day-date">יום ג', 9 ביוני · טיסה 23:15</div>
         </div>
         <div class="day-toggle">▾</div>
       </div>
       <div class="day-body">
         <ul class="activity-list">
-          <li class="activity-item"><span class="activity-time">09:00</span><div class="activity-dot"></div><span class="activity-text">צ'ק-אאוט מהמלון</span></li>
-          <li class="activity-item"><span class="activity-time">10:00</span><div class="activity-dot"></div><span class="activity-text">יום חופשי עד הטיסה — מזוודות באחסון במלון</span></li>
-          <li class="activity-item"><span class="activity-time">20:30</span><div class="activity-dot"></div><span class="activity-text">יציאה לנמל התעופה</span></li>
-          <li class="activity-item"><span class="activity-time">23:15</span><div class="activity-dot"></div><span class="activity-text">המראה — LY חזרה לבית ❤️</span></li>
+          <li class="activity-item"><span class="activity-time"></span><div class="activity-dot"></div><span class="activity-text">רחוב ואצ'י — קניות אחרונות</span></li>
+          <li class="activity-item"><span class="activity-time">23:15</span><div class="activity-dot"></div><span class="activity-text">טיסת חזור ✈️</span></li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
-</div>
 
 <div id="page-map" class="page">
   <section id="map-section">
@@ -2414,9 +2409,9 @@
       ul.querySelectorAll('.activity-time, .activity-text').forEach(span => {
         span.textContent = span.textContent.trim();
       });
-      data['day_' + i] = ul.innerHTML;
+      data['sched2_' + i] = ul.innerHTML;
       const titleEl = card.querySelector('.day-title').cloneNode(true);
-      data['daytitle_' + i] = titleEl.innerHTML;
+      data['sched2_title_' + i] = titleEl.innerHTML;
     });
     ['flights','hotel','food','attr','trans','shop'].forEach(k => {
       const el = document.getElementById('b-' + k);
@@ -2427,7 +2422,7 @@
       packItems.push({ label: item.querySelector('.check-label').textContent, done: item.classList.contains('done'), cat: item.dataset.cat || 'אחר' });
     });
     data.packItems = JSON.stringify(packItems);
-    document.querySelectorAll('.day-notes').forEach((n, i) => { data['notes_' + i] = n.value || ''; });
+    document.querySelectorAll('.day-notes').forEach((n, i) => { data['notes2_' + i] = n.value || ''; });
     data.theme = document.body.classList.contains('light') ? 'light' : 'dark';
     return data;
   }
@@ -2436,8 +2431,15 @@
     if (!data) return;
     _isLoading = true;
     document.querySelectorAll('.day-card').forEach((card, i) => {
-      if (data['day_' + i]) card.querySelector('.activity-list').innerHTML = data['day_' + i];
-      if (data['daytitle_' + i]) card.querySelector('.day-title').innerHTML = data['daytitle_' + i];
+      // Only restore if saved data has real content (not empty/whitespace)
+      const saved = data['sched2_' + i];
+      if (saved && saved.trim().length > 10) {
+        card.querySelector('.activity-list').innerHTML = saved;
+      }
+      const savedTitle = data['sched2_title_' + i];
+      if (savedTitle && savedTitle.trim().length > 1) {
+        card.querySelector('.day-title').innerHTML = savedTitle;
+      }
     });
     ['flights','hotel','food','attr','trans','shop'].forEach(k => {
       const el = document.getElementById('b-' + k);
@@ -2458,7 +2460,7 @@
       updatePackProgress();
     }
     setTimeout(() => {
-      document.querySelectorAll('.day-notes').forEach((n, i) => { if (data['notes_' + i]) n.value = data['notes_' + i]; });
+      document.querySelectorAll('.day-notes').forEach((n, i) => { if (data['notes2_' + i]) n.value = data['notes2_' + i]; });
     }, 100);
     if (data.theme === 'light' && !document.body.classList.contains('light')) {
       document.body.classList.add('light');
