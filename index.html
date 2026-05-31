@@ -1935,6 +1935,10 @@
       </div>
     </div>
 
+  </div><!-- /schedule-list -->
+  </section>
+</div><!-- /page-schedule -->
+
 <div id="page-map" class="page">
   <section id="map-section">
   <div class="section-title fade-in">מפה אינטראקטיבית <span>🗺️</span></div>
@@ -2332,7 +2336,7 @@
     const bootstrapScript = `
   <script id="bootstrap-data">
     (function() {
-      const data = ${JSON.stringify({
+      const data = ${JSON.stringify({schedVersion: 3,
         customPlaces: JSON.stringify(customPlaces),
         packItems: JSON.stringify(packItemsExport),
         ...Object.fromEntries(['flights','hotel','food','attr','trans','shop'].map(k => ['budget_'+k, budgetVals[k] || ''])),
@@ -2342,12 +2346,12 @@
           ulClone.querySelectorAll('.activity-time, .activity-text').forEach(span => {
             span.textContent = span.textContent.trim();
           });
-          acc['day_'+i] = ulClone.innerHTML;
-          acc['daytitle_'+i] = card.querySelector('.day-title').cloneNode(true).innerHTML;
+          acc['sched2_'+i] = ulClone.innerHTML;
+          acc['sched2_title_'+i] = card.querySelector('.day-title').cloneNode(true).innerHTML;
           return acc;
         }, {}),
         ...Array.from(document.querySelectorAll('.day-notes')).reduce((acc, n, i) => {
-          acc['notes_'+i] = n.value;
+          acc['notes2_'+i] = n.value;
           return acc;
         }, {})
       })};
@@ -2393,25 +2397,29 @@
   function markUserAction() { _userActionPending = true; }
 
   // ─── LOCAL STORAGE SAVE/LOAD ──────────────────────────────
-  const STORAGE_KEY = 'budapest2026';
+  const STORAGE_KEY   = 'budapest2026';
+  const SCHED_VERSION = 3; // bump when schedule HTML changes
 
   let _saveTimer = null;
   let _isLoading = false;
 
   function collectData() {
     const data = {};
+    data.schedVersion = SCHED_VERSION; // version gate for schedule restore
     document.querySelectorAll('.day-card').forEach((card, i) => {
-      // Clone and strip UI-only elements so they don't get saved and re-duplicated
-      const ul = card.querySelector('.activity-list').cloneNode(true);
+      const ulRaw = card.querySelector('.activity-list');
+      if (!ulRaw) return; // safety guard
+      const ul = ulRaw.cloneNode(true);
       ul.querySelectorAll('.delete-activity-btn, .act-pin-btn').forEach(b => b.remove());
-      // Sanitize: replace innerHTML of each editable span with its textContent
-      // so stray <br>/<div> from Enter presses never survive a save/load cycle
       ul.querySelectorAll('.activity-time, .activity-text').forEach(span => {
         span.textContent = span.textContent.trim();
       });
       data['sched2_' + i] = ul.innerHTML;
-      const titleEl = card.querySelector('.day-title').cloneNode(true);
-      data['sched2_title_' + i] = titleEl.innerHTML;
+      const titleRaw = card.querySelector('.day-title');
+      if (titleRaw) {
+        const titleEl = titleRaw.cloneNode(true);
+        data['sched2_title_' + i] = titleEl.innerHTML;
+      }
     });
     ['flights','hotel','food','attr','trans','shop'].forEach(k => {
       const el = document.getElementById('b-' + k);
@@ -2430,17 +2438,25 @@
   function applyData(data) {
     if (!data) return;
     _isLoading = true;
-    document.querySelectorAll('.day-card').forEach((card, i) => {
-      // Only restore if saved data has real content (not empty/whitespace)
-      const saved = data['sched2_' + i];
-      if (saved && saved.trim().length > 10) {
-        card.querySelector('.activity-list').innerHTML = saved;
-      }
-      const savedTitle = data['sched2_title_' + i];
-      if (savedTitle && savedTitle.trim().length > 1) {
-        card.querySelector('.day-title').innerHTML = savedTitle;
-      }
-    });
+    // Only restore schedule from data saved by this version
+    // Old Firebase data (no schedVersion or wrong version) → keep HTML as-is
+    if (data.schedVersion === SCHED_VERSION) {
+      document.querySelectorAll('.day-card').forEach((card, i) => {
+        try {
+          const list = card.querySelector('.activity-list');
+          const saved = data['sched2_' + i];
+          if (list && saved && saved.trim().length > 10) {
+            list.innerHTML = saved;
+          }
+          const titleEl = card.querySelector('.day-title');
+          const savedTitle = data['sched2_title_' + i];
+          if (titleEl && savedTitle && savedTitle.trim().length > 1) {
+            titleEl.innerHTML = savedTitle;
+          }
+        } catch(e) { console.warn('applyData day error:', i, e); }
+      });
+    }
+    // else: old data — keep the HTML schedule (updated in this version)
     ['flights','hotel','food','attr','trans','shop'].forEach(k => {
       const el = document.getElementById('b-' + k);
       if (el && data['budget_' + k] !== undefined) el.value = data['budget_' + k];
@@ -3676,10 +3692,10 @@
     const keys  = ['flights','hotel','food','attr','trans','shop'];
     const total = keys.reduce((s,k) => s + (parseFloat(document.getElementById('b-'+k)?.value)||0), 0);
     const budStr = total > 0 ? '₪' + Math.round(total).toLocaleString() : '₪–';
-    const vals = { days, pct, budget: budStr };
-    ['days','pct','budget'].forEach(k => {
+    const vals = { days, pct };
+    ['days','pct'].forEach(k => {
       if (_prevStatValues[k] !== vals[k]) {
-        const map = { days:'stat-days-left', pct:'stat-pack-pct', budget:'stat-budget' };
+        const map = { days:'stat-days-left', pct:'stat-pack-pct' };
         const el  = document.getElementById(map[k]);
         if (el) {
           el.textContent = vals[k];
